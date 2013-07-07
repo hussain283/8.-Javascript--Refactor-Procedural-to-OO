@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  $('#roller button.add').on('click', function() {
-    newDice.appendTo('.dice');
-  });
+
+  newDice = new Dice(6);
+
+  $('#roller button.add').on('click', newDice.appendTo);
 
   $('#roller button.roll').on('click', function() {
     $('.die').each(function(k, die) {
@@ -10,8 +11,6 @@ $(document).ready(function() {
     });
   });
 });
-
-newDice = new Dice(6);
 
 function Dice(sides) {
   this.sides = sides;
